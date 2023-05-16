@@ -58,4 +58,5 @@ getNNUNet2ONNX(TestInputModelPath, TestOutputPath, 0)
 #To load .onnx (as pytorch)
 onnxPath = '/mnt/InternalHDD/User/likitler/ENE_Project/Segmentation/HeadNeck/data4Seg_T/ONNX_MODEL/nnunetModel.onnx'
 onnx_model = onnx.load(onnxPath)
-
+onnx.checker.check_model(onnx_model)
+print(onnx.helper.printable_graph(onnx_model.graph))
