@@ -15,13 +15,9 @@ Use a recent version of Python! 3.9 or newer is guaranteed to work!
 
 **nnU-Net v2 can coexist with nnU-Net v1! Both can be installed at the same time.**
 
-1) Install [PyTorch](https://pytorch.org/get-started/locally/) as described on their website (conda/pip). Please 
-install the latest version with support for your hardware (cuda, mps, cpu).
-**DO NOT JUST `pip install nnunetv2` WITHOUT PROPERLY INSTALLING PYTORCH FIRST**. For maximum speed, consider 
-[compiling pytorch yourself](https://github.com/pytorch/pytorch#from-source) (experienced users only!). 
+1) Install nnU-Net, please following the instruction shown in the following website: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/installation_instructions.md
+2) Install ONNX libary either with pip or anaconda using the following website: 
 
-2) Install nnU-Net depending on your use case:
-    1) For use as **standardized baseline**, **out-of-the-box segmentation algorithm** or for running 
-     **inference with pretrained models**:
-
-       ```pip install nnunetv2```
+```pip install onnx```
+or 
+```conda install -c conda-forge onnx```
