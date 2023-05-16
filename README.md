@@ -29,5 +29,5 @@ or
 
 # Limitation
 
- Markup : *only work with 3D 
-*Assume that your model are train using CUDA
+* only work with 3D 
+* Assume that your model are train using CUDA
