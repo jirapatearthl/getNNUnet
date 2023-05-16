@@ -28,5 +28,6 @@ or
 3) Download and import getNNUnet.py and called the getNNUNet2ONNX(...), example can be found in the code
 
 # Limitation
-*only work with 3D 
+
+ Markup : *only work with 3D 
 *Assume that your model are train using CUDA
