@@ -25,5 +25,5 @@ Use a recent version of Python! 3.9 or newer is guaranteed to work!
 or 
 ```conda install -c conda-forge onnx```
 
-3) Download getNNUnet.py and called the function
+3) Download and import getNNUnet.py and called the getNNUNet2ONNX(...), example can be found in the code
 
