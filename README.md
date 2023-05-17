@@ -19,13 +19,25 @@ Use a recent version of Python! 3.9 or newer is guaranteed to work!
 
 ```pip install nnunetv2```
 
-2) Install ONNX libary either with pip or anaconda using the following website: 
+2) Install ONNX libary either with pip or anaconda using the following: 
 
 ```pip install onnx```
 or 
 ```conda install -c conda-forge onnx```
 
 3) Download and import getNNUnet.py and called the getNNUNet2ONNX(...), example can be found in the code
+
+4) Note that you can easily convert an.onnx model to pytorch by using "onnx2pytorch" library:
+
+```pip install onnx2pytorch```
+For example:
+```
+import onnx
+from onnx2pytorch import ConvertModel
+
+onnx_model = onnx.load(path_to_onnx_model)
+pytorch_model = ConvertModel(onnx_model)
+```
 
 # Limitations:
 
