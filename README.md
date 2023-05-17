@@ -43,4 +43,4 @@ pytorch_model = ConvertModel(onnx_model)
 # Limitations:
 
 * Only work with 3D 
-* Assume that your model are train using CUDA
+* We assumed that your model are trained using CUDA
