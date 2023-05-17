@@ -27,17 +27,25 @@ or
 
 3) Download and import getNNUnet.py and called getNNUNet2ONNX(...), example can be found in the code
 
-4) Note that you can easily convert an.onnx model to pytorch by using "onnx2pytorch" library:
+4) Note that you can easily convert a .onnx model to pytorch by using "onnx2torch" library:
 
-```pip install onnx2pytorch```
+```pip install onnx2torch```
+or
+```conda install -c conda-forge onnx2torch```
 
 For example:
 ```
-import onnx
-from onnx2pytorch import ConvertModel
+import torch
+from onnx2torch import convert
 
-onnx_model = onnx.load(path_to_onnx_model)
-pytorch_model = ConvertModel(onnx_model)
+# Path to ONNX model
+onnx_model_path = '/some/path/mobile_net_v2.onnx'
+# You can pass the path to the onnx model to convert it or...
+torch_model_1 = convert(onnx_model_path)
+
+# Or you can load a regular onnx model and pass it to the converter
+onnx_model = onnx.load(onnx_model_path)
+torch_model_2 = convert(onnx_model)
 ```
 
 # Limitations:
