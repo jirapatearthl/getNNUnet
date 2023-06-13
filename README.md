@@ -47,6 +47,14 @@ torch_model_1 = convert(onnx_model_path)
 onnx_model = onnx.load(onnx_model_path)
 torch_model_2 = convert(onnx_model)
 ```
+# Save nnUnet model to onnx (using getNNUnet)
+
+
+
+# Save modified nnU net pretrained model to custom architecture (with example)
+
+
+
 
 # Limitations:
 
