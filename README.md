@@ -49,11 +49,11 @@ torch_model_2 = convert(onnx_model)
 ```
 # Save nnUnet model to onnx (using getNNUnet)
 
-
+getUNNET
 
 # Save modified nnU net pretrained model to custom architecture (with example)
 
-
+modifyUNNET 
 
 
 # Limitations:
