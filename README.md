@@ -53,7 +53,9 @@ getUNNET
 
 # Save modified nnU net pretrained model to custom architecture (with example)
 
-modifyUNNET 
+modiUNNET 
+
+
 
 
 # Limitations:
