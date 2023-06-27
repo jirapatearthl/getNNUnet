@@ -51,7 +51,7 @@ torch_model_2 = convert(onnx_model)
 
 Please used "getNNUnet.py" and import getNNUNet2ONNX
 
-# Save modified nnUNET pretrained model to custom architecture (with example)
+# Save modified nnUNET pretrained model to custom architecture (using modifyNNUNET)
 
 Please used "modiNNUNET.py" and import modifyNNUNET
 
