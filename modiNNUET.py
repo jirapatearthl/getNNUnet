@@ -70,7 +70,8 @@ def modifyNNUNET(onnxmodel, inputSize, outputFilenames, sliceLayer, newLayer, to
     dummpySample = torch.randn(inputSize).to("cuda") 
     torch.onnx.export(new_model, dummpySample, fileNameNewNameNow, verbose=False, input_names=['input'], output_names=["output"], export_params=True,
                       opset_version=11, operator_export_type=torch.onnx.OperatorExportTypes.ONNX, dynamic_axes=dynamic_axes)
-    
+
+##Example:
 modelPathIN = '/mnt/InternalHDD/User/likitler/ENE_Project/Segmentation/HeadNeck/data4Seg_T/ONNX_MODEL/nnunetModel.onnx'
 inputSizeIN = (2, 1, 96, 192, 192)
 freezeWeightIN = True
