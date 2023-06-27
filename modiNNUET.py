@@ -54,25 +54,19 @@ def modifyNNUNET(onnxmodel, inputSize, outputFilenames, sliceLayer, newLayer, to
     print(nnU_model)
     del pytorch_model
     del model
-    #addU_model = torch.nn.Sequential(torch.nn.Flatten(), torch.nn.Linear(256000, 5000), torch.nn.ReLU(),  torch.nn.Linear(5000, 1000), torch.nn.Linear(1000, 1))
-    ###addU_model = torch.nn.Sequential(torch.nn.Flatten(), torch.nn.Linear(552960, 32768), torch.nn.ReLU(), torch.nn.Linear(32768, 4096), torch.nn.Linear(4096, 256), torch.nn.Linear(256, 1), torch.nn.Sigmoid())
-    ###addU_model = torch.nn.Sequential(torch.nn.AdaptiveMaxPool3d((6, 6, 6)), torch.nn.Flatten(), torch.nn.Linear(552960,4096), torch.nn.ReLU(), torch.nn.Linear(4096, 128), torch.nn.ReLU(), torch.nn.Linear(128, 1), torch.nn.Sigmoid())
-    
-    
+   
     addU_model = newLayer
     new_model = torch.nn.Sequential(nnU_model, addU_model)
     del nnU_model
     del addU_model
     
-    
     print(summary(new_model, input_size=inputSize, device="cuda"))
-    #print(summary(new_model, input_size=(2, 1, 64, 160, 160), device="cuda"))
+    print(summary(new_model, input_size=(2, 1, 64, 160, 160), device="cuda"))
     
     fileNameNewNameNow = outputFilenames###"/mnt/InternalHDD/User/likitler/ENE_Project/HN_DL_SCANNATIVE_PT/MODEL/Pytorch/nnTransferModel.onnx"
     
     dynamic_axes = {'input' : {0 : 'batch_size'}, 
                             'output' : {0 : 'batch_size'}}
-    #dummpySample = torch.randn([2, 1, 64, 160, 160]).to("cuda") 
     dummpySample = torch.randn(inputSize).to("cuda") 
     torch.onnx.export(new_model, dummpySample, fileNameNewNameNow, verbose=False, input_names=['input'], output_names=["output"], export_params=True,
                       opset_version=11, operator_export_type=torch.onnx.OperatorExportTypes.ONNX, dynamic_axes=dynamic_axes)
